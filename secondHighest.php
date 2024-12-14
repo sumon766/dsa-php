@@ -4,10 +4,23 @@
 
     function secondHighest ($arr) 
     {
-        $largest = $arr[0];
-        $secondLargest = $arr[1];
+        $largest = PHP_INT_MIN;
+        $secondLargest = PHP_INT_MIN;
 
-        
+        foreach ($arr as $num)
+        {
+            if ($num > $largest) 
+            {
+                $secondLargest = $largest;
+                $largest = $num;
+            }
+
+            if ($num < $largest && $num > $secondLargest) {
+                $secondLargest = $num;
+            }
+        }
+
+        return $secondLargest;
     }
 
     $my_array = [8, 13, 21, 16, 87, 23, 34, 60];
