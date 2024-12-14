@@ -6,10 +6,18 @@
     {
         $lowest = $arr[0];
 
-        for ()
+        for ($i = 0; $i < count($arr); $i++) 
+        {
+            if ($arr[$i] < $lowest) 
+            {
+                $lowest = $arr[$i];
+            }
+        }
+
+        return $lowest;
     }
 
     $my_array = [7, 12, 9, 4, 11];
-    print_r(lowestValue($my_array));
+    echo "The lowest value is: " . lowestValue($my_array);
 
 ?>
